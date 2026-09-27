@@ -1,0 +1,98 @@
+{
+ "generator": "02_probability_axioms/make_stimuli.py",
+ "seeds": {
+  "SEED_NLI": 202,
+  "SEED_PQA": 203,
+  "SEED_ORDER": 204,
+  "SEED_BUNDLE": 206
+ },
+ "ch_option_order": "balanced within domain: each of the 6 permutations used floor(N/6) or ceil(N/6) times",
+ "bundle_qids": "opaque ids q01..q10 -> question id, fixed-seed shuffled order (per item)",
+ "pqa_in_jevals_suite": [
+  "pqa-44",
+  "pqa-226",
+  "pqa-274",
+  "pqa-941",
+  "pqa-840",
+  "pqa-289",
+  "pqa-443",
+  "pqa-310",
+  "pqa-320",
+  "pqa-839",
+  "pqa-619",
+  "pqa-81",
+  "pqa-368",
+  "pqa-820",
+  "pqa-811",
+  "pqa-964",
+  "pqa-729",
+  "pqa-125",
+  "pqa-332"
+ ],
+ "n_items": 160,
+ "n_by_domain": {
+  "nli": 100,
+  "pqa": 60
+ },
+ "questions_per_item": 10,
+ "qwen_repeat_items": [
+  "nli-117680c",
+  "nli-104395c",
+  "nli-60212c",
+  "nli-101531c",
+  "nli-114916n",
+  "nli-131059e",
+  "nli-49172n",
+  "nli-117177n",
+  "nli-104805e",
+  "nli-34176n",
+  "nli-63013n",
+  "nli-143760n",
+  "pqa-385",
+  "pqa-138",
+  "pqa-438",
+  "pqa-828",
+  "pqa-44",
+  "pqa-226",
+  "pqa-158",
+  "pqa-274"
+ ],
+ "sources": {
+  "nli": {
+   "dataset": "ChaosNLI-MNLI via HF metaeval/chaos-mnli-ambiguity",
+   "revision": "4c978a7bdba2fe99ca692b564a147573622b16df",
+   "cached_file": "_data/chaos_mnli.jsonl",
+   "sha256": "07d756705106c5aeab5216326deff7a16992430a466e19d6214065e73efcb9b5",
+   "sampling": "simple random sample of 100 of 1599 items, numpy default_rng(202)"
+  },
+  "pqa": {
+   "dataset": "qiaojin/PubMedQA pqa_labeled train",
+   "revision": "9001f2853fb87cab8d220904e0de81ac6973b318",
+   "cached_files": {
+    "states": "_data/jevals_states_pubmedqa_all.json",
+    "labels": "_data/jevals_labels_pubmedqa_all.json"
+   },
+   "sha256": {
+    "states": "7180bbe844ccc3b71b15a4dce3da04ca13d86532b80f3e2a65e13dee2790e9c9",
+    "labels": "39c8a5b7ab9ccdae3e6381d775a5fda3fc6188641119886df9ccc53c0569defd"
+   },
+   "sampling": "stratified by final_decision, 20 each of yes/no/maybe, numpy default_rng(203)"
+  }
+ },
+ "definitions": {
+  "nli": "Classify the relation between the premise and the hypothesis. There are exactly three mutually exclusive labels: entailment (given the premise, the hypothesis is definitely true), neutral (given the premise, the hypothesis might or might not be true), and contradiction (given the premise, the hypothesis is definitely false).",
+  "pqa": "Classify the conclusion that the context passages support for the research question. There are exactly three mutually exclusive labels: affirmative (the passages support answering the research question 'yes'), negative (the passages support answering the research question 'no'), and inconclusive (the evidence in the passages leaves the answer uncertain: 'maybe')."
+ },
+ "classes": {
+  "nli": [
+   "entailment",
+   "neutral",
+   "contradiction"
+  ],
+  "pqa": [
+   "affirmative",
+   "negative",
+   "inconclusive"
+  ]
+ }
+}
