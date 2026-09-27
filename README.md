@@ -70,8 +70,8 @@ synthetic logs with known answers.
 - Qwen3.8-27B: official BF16 weights served with vLLM 0.19.1 on two RTX A6000 GPUs, thinking disabled. The prompts and
   the two readouts are described in Section 4 and Appendix A of the paper.
 
-## Data sources and licenses
+## Licenses
 
-The NLI items come from ChaosNLI (Nie et al., 2020; CC BY-NC 4.0), which is built on MNLI (Williams et al., 2018). The
-PubMedQA items come from the expert-labelled PubMedQA set (Jin et al., 2019; MIT license). Reuse of the item texts is
-subject to those licenses.
+The code is released under the MIT License (see `LICENSE`). The item texts keep the licenses of their sources: the NLI
+items come from ChaosNLI (Nie et al., 2020; CC BY-NC 4.0), which is built on MNLI (Williams et al., 2018), and the
+PubMedQA items from the expert-labelled PubMedQA set (Jin et al., 2019; MIT license).
